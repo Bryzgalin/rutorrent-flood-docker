@@ -225,25 +225,6 @@ apk del --purge \
 rm -rf \
         /tmp/*
 
-# install flood webui
-RUN apk add --no-cache \
-      nodejs \
-      nodejs-npm && \
-    apk add --no-cache --virtual=build-dependencies \
-      build-base && \
-    mkdir /usr/flood && \
-    cd /usr/flood && \
-    git clone https://github.com/jesec/flood.git .&& \
-    npm set unsafe-perm true && \
-    npm install --prefix /usr/flood && \
-    npm run build && \
-    npm prune --production && \
-    rm config.js && \
-    apk del --purge build-dependencies && \
-    rm -rf /root \
-           /tmp/* && \
-    ln -s /usr/local/bin/mediainfo /usr/bin/mediainfo
-
 # add local files
 COPY root/ /
 COPY VERSION /
