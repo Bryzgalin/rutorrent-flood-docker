@@ -99,8 +99,7 @@ RUN NB_CORES=${BUILD_CORES-`getconf _NPROCESSORS_CONF`} && \
         libressl-dev \
         libffi-dev \
         python3-dev \
-        go \
-        musl-dev && \
+        go && \
 # compile curl to fix ssl for rtorrent
 cd /tmp && \
 mkdir curl && \
