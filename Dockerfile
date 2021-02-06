@@ -239,7 +239,6 @@ RUN NB_CORES=${BUILD_CORES-`getconf _NPROCESSORS_CONF`} && \
     npm install --prefix /usr/flood && \
     npm run build && \
     npm prune --production && \
-    rm config.js && \
     apk del --purge build-dependencies && \
     rm -rf /root \
            /tmp/* && \
