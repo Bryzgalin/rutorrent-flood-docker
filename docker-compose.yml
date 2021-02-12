@@ -14,6 +14,7 @@ services:
         - PGID=0
         - TZ=Europe/Kiev
         - CREATE_SUBDIR_BY_TRACKERS=NO
+        - FLOOD_SECRET=cd568e24-6d6f-11eb-9439-0242ac130002
         - SSL_ENABLED=YES
         - RT_TOKEN=
         - RT_MASTERS=
