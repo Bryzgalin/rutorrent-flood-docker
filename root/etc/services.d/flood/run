@@ -2,7 +2,7 @@
 
 cd /usr/flood || exit
 
-FLOOD_START_PARAMS="--host 0.0.0.0 --port 3000 --rundir /config/flood "
+FLOOD_START_PARAMS="--host 0.0.0.0 --port 3000 --rundir /config/flood --secret ${FLOOD_SECRET} "
 if [ "$SSL_ENABLED" == "yes" ]
 then
   FLOOD_START_PARAMS=$FLOOD_START_PARAMS"--ssl true --sslkey /config/nginx/key.pem --sslcert /config/nginx/cert.pem"

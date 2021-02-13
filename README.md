@@ -118,6 +118,7 @@ Remember editing `/config/rtorrent/rtorrent.rc` with your own settings, especial
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
 | `-e CREATE_SUBDIR_BY_TRACKERS=YES` | YES to create downloads/watch subfolder for trackers (OLD BEHAVIOUR) or NO to create only completed/watch folder (DEFAULT) |
 | `-e SSL_ENABLED=YES` | YES to enable SSL in nginx/flood or NO to not use it (DEFAULT) |
+| `-e FLOOD_SECRET=` | Generate the new FLOOD_SECRET before start container. You can use https://www.uuidgenerator.net |
 | `-e RT_TOKEN=your_bot_token` | for your Telegram BOT Token - [see rtelegram documentation for instructions](https://github.com/pyed/rtelegram/wiki/Getting-started). If not used, rtelegram won't start on boot. |
 | `-e RT_MASTERS=your_real_telegram_username` | for your Telegram real username - [see rtelegram documentation for instructions](https://github.com/pyed/rtelegram/wiki/Getting-started). If not used, rtelegram won't start on boot. |
 | `-e RT_COMPLETED=completed_torrents_log_file_name` | path to completed downloads file. Leave empty is you won't receive telegram notifications  - [see rtelegram documentation for instructions](https://github.com/pyed/rtelegram/wiki/Notifications). |
@@ -136,6 +137,7 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 ```
 
 ## Changelog
+v4.4.7 (13/02/2021): Removed config.js file. Now, Flood starts with command-line params
 
 v4.3.7 (12/11/2020): Flood was updated to v 4.0.0, so all Docker images start from 12/11/2020 will contain updated Flood
 

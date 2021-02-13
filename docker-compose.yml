@@ -15,6 +15,7 @@ services:
         - TZ=Europe/Kiev
         - CREATE_SUBDIR_BY_TRACKERS=NO
         - SSL_ENABLED=YES
+        - FLOOD_SECRET=cd568e24-6d6f-11eb-9439-0242ac130002
         - RT_TOKEN=
         - RT_MASTERS=
         - RT_COMPLETED=/config/log/rtorrent/rtorrent_completed.log
