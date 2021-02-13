@@ -99,7 +99,8 @@ RUN NB_CORES=${BUILD_CORES-`getconf _NPROCESSORS_CONF`} && \
         libressl-dev \
         libffi-dev \
         python3-dev \
-        go && \
+        go \
+        musl-dev && \
 # compile curl to fix ssl for rtorrent
 cd /tmp && \
 mkdir curl && \
@@ -223,6 +224,25 @@ apk del --purge \
         build-dependencies && \
 rm -rf \
         /tmp/*
+
+# install flood webui
+RUN NB_CORES=${BUILD_CORES-`getconf _NPROCESSORS_CONF`} && \
+    apk add --no-cache \
+      nodejs \
+      nodejs-npm && \
+    apk add --no-cache --virtual=build-dependencies \
+      build-base && \
+    mkdir /usr/flood && \
+    cd /usr/flood && \
+    git clone https://github.com/jesec/flood.git .&& \
+    npm set unsafe-perm true && \
+    npm install --prefix /usr/flood && \
+    npm run build && \
+    npm prune --production && \
+    apk del --purge build-dependencies && \
+    rm -rf /root \
+           /tmp/* && \
+    ln -s /usr/local/bin/mediainfo /usr/bin/mediainfo
 
 # add local files
 COPY root/ /
