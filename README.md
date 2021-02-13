@@ -112,7 +112,7 @@ romancin/rutorrent-flood:0.9.4
 
 Remember editing `/config/rtorrent/rtorrent.rc` with your own settings, especially your watch subfolder configuration.
 
-## Environment variables supported
+## Environment variables supported 
 
 | Variable | Function |
 | :----: | --- |
