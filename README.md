@@ -137,6 +137,8 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 ```
 
 ## Changelog
+v4.5.7 (14/02/2021): Fixed pyroscope install
+
 v4.4.7 (13/02/2021): Removed config.js file. Now, Flood starts with command-line params
 
 v4.3.7 (12/11/2020): Flood was updated to v 4.0.0, so all Docker images start from 12/11/2020 will contain updated Flood
